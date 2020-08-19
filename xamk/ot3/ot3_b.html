@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Lisää Elokuva:
+    <input type="text" name="" id="syöte"><br><br>
+    <h2 id="demo"></h2><br>
+    <button onclick="myFunction()">Lisää Elokuva</button><button onclick="tulostaElokuvat()">Tulosta Elokuvat</button>
+
+
+    <script> 
+        let elokuvat = []
+        function myFunction(){
+            //lisää tekstin arrayhin
+            elokuvat.push(document.getElementById("syöte").value);
+            console.log(elokuvat);
+            //jos tekstikenttä on tyhjä hälyttää
+            if(document.getElementById("syöte").value == ''){
+                window.alert("Tekstikenttä on tyhjä!")
+            }
+            // tyhjentää tekstikentän
+            document.getElementById("syöte").value = '';    
+        }
+        function tulostaElokuvat(){
+            elokuvat.sort(); //lajittelee elokuvat aakkosjärjestykseen
+            document.getElementById("demo").innerHTML = elokuvat;
+        }
+
+
+    </script>
+</body>
+</html>

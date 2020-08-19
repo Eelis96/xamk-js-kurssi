@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Tuntipalkka<input type="number" id="tuntipalkka"><br>
+    Tunnit<input type="number" id="tunnit"><br>
+    <button onclick="laskePalkka()">Laske Palkka</button>
+    <h2>Palkka: <span id="demo"></span></h2>
+
+    <script>
+
+        function laskePalkka(){
+            let palkka = {
+                tunnit: document.getElementById("tunnit").value, // hakee id:llä arvon
+                tuntipalkka: document.getElementById("tuntipalkka").value,
+            }
+            let tulos = palkka.tunnit*palkka.tuntipalkka;// kertoo tunnit tuntipalkalla
+            document.getElementById("demo").innerHTML = tulos+"€";
+            //jos tekstikenttä tyhjä hälyttää
+            if(document.getElementById("tuntipalkka").value == '' || document.getElementById("tunnit").value == '' ){
+            window.alert("Tekstikenttä on tyhjä!");
+            }
+        }
+    </script>
+</body>
+</html>

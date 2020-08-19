@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="syöte"><br>
+    <h2 id="demo"></h2><br>
+    <button onclick="myFunction()">Katso</button>
+
+    <script>
+
+        function myFunction(){
+            //jos tekstikenttä on tyhjä hälyttää
+            if(document.getElementById("syöte").value == ''){
+                window.alert("Tekstikenttä on tyhjä!")
+            }
+            if(document.getElementById("syöte").value.includes('+')){ //katsoo onko syötteesä + ja jos on tulostaa että on syntynyt 1800 luvulla ja tyhjentää tekstikentän
+                document.getElementById("demo").innerHTML = "Henkilö on syntynyt 1800-luvulla";
+                document.getElementById("syöte").value = '';
+            }else if(document.getElementById("syöte").value.includes('-')){ //katsoo onko syötteesä - ja jos on tulostaa että on syntynyt 1900 luvulla ja tyhjentää tekstikentän
+                document.getElementById("demo").innerHTML = "Henkilö on syntynyt 1900-luvulla";
+                document.getElementById("syöte").value = '';
+            }else if(document.getElementById("syöte").value.includes('A')){ //katsoo onko syötteesä A ja jos on tulostaa että on syntynyt 2000 luvulla ja tyhjentää tekstikentän
+                document.getElementById("demo").innerHTML = "Henkilö on syntynyt 2000-luvulla";
+                document.getElementById("syöte").value = '';
+            }
+        }
+
+    </script>
+</body>
+</html>
