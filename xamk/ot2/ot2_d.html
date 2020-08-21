@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="nopat/noppa1.jpg" id="ensimmainen_noppa">
+    <img src="nopat/noppa2.jpg" id="toinen_noppa"><br><br>
+    <button onclick="myFunction()">Pelaa</button>
+
+
+    <script>
+        function myFunction(){
+            //arpoo numeron 1 ja 6 väliltä ja vaihtaa kuvan numeron perusteella
+            let ensimmainen_noppa = Math.floor(Math.random() * 6) + 1;
+            document.getElementById("ensimmainen_noppa").src = "nopat/noppa" + ensimmainen_noppa + ".jpg"
+            let toinen_noppa = Math.floor(Math.random() * 6) + 1;
+            document.getElementById("toinen_noppa").src = "nopat/noppa" + toinen_noppa + ".jpg"
+            //jos kumpikin numero on sama ponnahdusikkunassa lukee mikä pari tuli
+            if(ensimmainen_noppa == 1 && toinen_noppa == 1){
+                window.alert("Ykköspari")
+            }else if(ensimmainen_noppa == 2 && toinen_noppa == 2){
+                window.alert("Kakkospari")
+            }else if(ensimmainen_noppa == 3 && toinen_noppa == 3){
+                window.alert("Kolmospari")
+            }else if(ensimmainen_noppa == 4 && toinen_noppa == 4){
+                window.alert("nelospari")
+            }else if(ensimmainen_noppa == 5 && toinen_noppa == 5){
+                window.alert("vitospari")
+            }else if(ensimmainen_noppa == 6 && toinen_noppa == 6){
+                window.alert("Kutospari")
+            }
+        }
+
+    </script>
+</body>
+</html>

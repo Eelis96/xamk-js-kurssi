@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nopeustutka</h1>
+    Nopeusrajoitus:<br>
+    <input type="number" id="nopeusrajoitus"><br><br>
+    Auton Nopeus:<br>
+    <input type="number" id="auton-nopeus"><br><br>
+    <button onclick="myFunction()">Tutki</button><br><br>
+    <span id="toimintaohje"></span>
+    <script>
+        function myFunction(){
+            let syöte_rajoitus = document.getElementById("nopeusrajoitus").value;
+            let syötenopeus = document.getElementById("auton-nopeus").value;
+            let nopeusrajoitus = parseInt(syöte_rajoitus);
+            let auton_nopeus = parseInt(syötenopeus);
+            
+                if(auton_nopeus <= nopeusrajoitus){
+                    document.getElementById("toimintaohje").innerHTML = "Toivota Hyvää Matkaa!";
+                }else if(auton_nopeus > (nopeusrajoitus + 20)){ //jos ylinopeutta yli 20km/h tulee päiväsakko
+                    document.getElementById("toimintaohje").innerHTML = "Kysy Tulot Ja Laske Päiväsakko!"
+                }else if(nopeusrajoitus <= 60){ //katsoo onko rajoitus alle tai yhtäsuurikuin 60km/h ja jos on antaa isommat sakot
+                    if(auton_nopeus >= (nopeusrajoitus + 1) && auton_nopeus <= (nopeusrajoitus + 10)){
+                        document.getElementById("toimintaohje").innerHTML = "Määrää Liikennevirhemaksu 100€";
+                    }else if(auton_nopeus >= (nopeusrajoitus + 11) && auton_nopeus <= (nopeusrajoitus + 15)){
+                        document.getElementById("toimintaohje").innerHTML = "Määrää Liikennevirhemaksu 170€";
+                    }else if(auton_nopeus >= nopeusrajoitus + 16 && auton_nopeus <= (nopeusrajoitus + 20)){
+                        document.getElementById("toimintaohje").innerHTML = "Määrää Liikennevirhemaksu 200€";
+                    }
+                }else if(nopeusrajoitus > 60){ // katsoo onko nopeusrajoitus yli 60km/h ja antaa pienemmät sakot
+                    if(auton_nopeus >= (nopeusrajoitus + 1) && auton_nopeus <= (nopeusrajoitus + 10)){
+                        document.getElementById("toimintaohje").innerHTML = "Määrää Liikennevirhemaksu 70€";
+                    }else if(auton_nopeus >= (nopeusrajoitus + 11) && auton_nopeus <= (nopeusrajoitus + 15)){
+                        document.getElementById("toimintaohje").innerHTML = "Määrää Liikennevirhemaksu 140€";
+                    }else if(auton_nopeus >= (nopeusrajoitus + 16) && auton_nopeus <= (nopeusrajoitus + 20)){
+                        document.getElementById("toimintaohje").innerHTML = "Määrää Liikennevirhemaksu 170€";
+                    }
+                }
+        }
+
+        
+
+    </script>
+</body>
+</html>

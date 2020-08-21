@@ -1,0 +1,3 @@
+ot1_b = 48
+Jätin ot1_c tekemättä, koska se vaikutti liian helpolta.
+En oppinut hirveästi uutta. Tehtävät olivat mielenkiintoisia, mutta hieman liian helppoja. Käytin yhteensä n. tunnin verran tehtäviin.

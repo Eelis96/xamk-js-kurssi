@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Valuuttalaskin</h1>
+    <p>
+    <label>Summa</label>
+    <input type="number" id="syöte"
+    oninput="myFunction()"
+    onchange="myFunction()">
+    
+    </p>
+    <form>
+        <select id="valuutta">
+            <option value="eur-usd">EUR->USD</option>
+            <option value="usd-eur">USD->EUR</option>
+        </select>
+    </form>
+    <p id="summa"></p>
+    
+
+    <script>
+
+        function myFunction(){
+            let valuutta = document.getElementById("valuutta").value;
+            let syöte = document.getElementById("syöte").value;
+
+            if(valuutta == "eur-usd"){
+                var tulos = (syöte * 1.18) + "$";
+            }else if(valuutta == "usd-eur") {
+                var tulos = (syöte * 0.84) + "€";
+            }
+            document.getElementById("summa").innerHTML = tulos;
+        }
+
+
+    </script>
+</body>
+</html>

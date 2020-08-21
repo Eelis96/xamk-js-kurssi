@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{text-align: center; font-size: 30px;}
+    </style>
+</head>
+<body>
+    <p id="tervehdys"></p>
+
+    <script>
+        let tunti = new Date().getHours();
+            if(tunti >= 7 && tunti < 11.59){
+                document.getElementById("tervehdys").innerHTML = "Hyvää Huomenta!"
+            }else if(tunti >= 12 && tunti < 17.59){
+                document.getElementById("tervehdys").innerHTML = "Hyvää Päivää!"
+            }else if(tunti >= 18 && tunti < 21.59){
+                document.getElementById("tervehdys").innerHTML = "Hyvää Iltaa!"
+            }else if(tunti >= 22 && tunti < 6.59){
+                document.getElementById("tervehdys").innerHTML = "Hyvää Yötä!"
+            }
+    </script>
+</body>
+</html>

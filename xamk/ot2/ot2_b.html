@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    pituus:<input type="number" id="syöte-pituus" min="0">cm<br>
+    paino:<input type="number" id="syöte-paino" min="0">kg<br>
+    <button onclick="myFunction()">Laske Painoindeksi</button>
+    <p id="indeksi"></p>
+    <p id="indeksiluokka"></p>
+
+
+
+
+    <script>
+        function myFunction(){ 
+            //laskee painoindeksin
+            let pituus = document.getElementById("syöte-pituus").value / 100;
+            let paino = document.getElementById("syöte-paino").value;
+            let tulos = paino / (pituus * pituus);
+            tulos = tulos.toFixed(1);
+            document.getElementById("indeksi").innerHTML = "Painoindeksisi on " + tulos;
+            //painoindeksin mukaan kertoo painoindeksiluokan
+                if(tulos <= 18.4){
+                    document.getElementById("indeksiluokka").innerHTML = "Alhainen Paino";
+                }else if(tulos >= 18.5 && tulos <= 24.9){
+                    document.getElementById("indeksiluokka").innerHTML = "Normaali Paino"
+                }else if(tulos >= 25.0 && tulos <= 29.9){
+                    document.getElementById("indeksiluokka").innerHTML= "Lievä Ylipaino";
+                }else if(tulos >= 30.0){
+                    document.getElementById("indeksiluokka").innerHTML = "Merkittävä Ylipaino";
+                }
+        }
+
+
+    </script>
+</body>
+</html>

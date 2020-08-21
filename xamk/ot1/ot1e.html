@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{text-align: center}
+    </style>
+</head>
+<body>
+    <h2>Ääntenlaskenta</h2><br><br>
+    <!--kutsuu funktiota ja antaa argumentin-->
+    <button onclick="myFunction(2)">2</button>
+    <button onclick="myFunction(3)">3</button>
+    <button onclick="myFunction(4)">4</button>
+    <button onclick="myFunction(5)">5</button>
+    <button onclick="myFunction(6)">6</button><br><br>
+    Tulos: <br><br>
+
+    2. Timo Soini: <span id="timo">0</span><br>
+    3. Barack Obama: <span id="barack">0</span><br>
+    4. Jussi: <span id="jussi">0</span><br>
+    5. Jethro Soini <span id="jethro">0</span><br>
+    6. Aleksi Lahtinen <span id="aleksi">0</span><br>
+
+    <script>
+        let timo = 0
+        let barack = 0
+        let jussi = 0
+        let jethro = 0
+        let aleksi = 0
+
+        function myFunction(numero){
+            //argumentin perusteella lisää äänen
+            if(numero == 2){
+                timo = timo + 1;
+                document.getElementById("timo").innerHTML = timo;
+            }else if(numero == 3){
+                barack = barack + 1
+                document.getElementById("barack").innerHTML = barack;
+            }else if(numero == 4){
+                jussi = jussi + 1
+                document.getElementById("jussi").innerHTML = jussi;
+            }else if(numero == 5){
+                jethro = jethro + 1
+                document.getElementById("jethro").innerHTML = jethro;
+            }else if(numero == 6){
+                aleksi = aleksi + 1
+                document.getElementById("aleksi").innerHTML = aleksi;
+            }
+        }
+
+
+    </script>
+</body>
+</html>
